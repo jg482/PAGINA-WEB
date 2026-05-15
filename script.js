@@ -2,7 +2,7 @@
 const Kp1 = 0.2, T1 = 2;   // Planta 1 (Rápida)
 const Kp2 = 0.8, T2 = 10;  // Planta 2 (Lenta)
 const umin = 0, umax = 100;
-const Ts = 0.1, t_fin = 60;
+const Ts = 0.1, t_fin = 200;
 const ru = 50, u1_0 = 50, u2_0 = 50, ry_ini = 50;
 const t_step = 5;
 const b1 = 0, b2 = 0; // Set-point weighting
