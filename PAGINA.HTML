@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador MRC - Control de Rango Medio</title>
+    <link rel="stylesheet" href="ESTILO.CSS">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Simulador de Control de Rango Medio (MRC)</h1>
+        <p>Implementación Web - Ingeniería Industrial</p>
+    </header>
+
+    <div class="dashboard">
+        <aside class="panel">
+            <h2>Configuración</h2>
+            
+            <label>Método de Control</label>
+            <select class="method-select" id="controlMethod">
+                <option value="vpc">MRC con VPC (Activo)</option>
+                <option value="none" disabled>Próximamente: Feedforward Online</option>
+            </select>
+
+            <h2>Sintonía Controlador</h2>
+            <div class="control-group">
+                <label>Kc1 (Válvula Rápida) <span class="value-display" id="val-kc1">8.35</span></label>
+                <input type="range" id="kc1" min="0" max="20" step="0.01" value="8.35">
+            </div>
+            <div class="control-group">
+                <label>Ti1 (Válvula Rápida) <span class="value-display" id="val-ti1">2.68</span></label>
+                <input type="range" id="ti1" min="0.1" max="10" step="0.01" value="2.68">
+            </div>
+            <div class="control-group">
+                <label>Kc2 (Válvula Lenta) <span class="value-display" id="val-kc2">0.30</span></label>
+                <input type="range" id="kc2" min="0" max="5" step="0.01" value="0.30">
+            </div>
+            <div class="control-group">
+                <label>Ti2 (Válvula Lenta) <span class="value-display" id="val-ti2">20.0</span></label>
+                <input type="range" id="ti2" min="1" max="100" step="0.1" value="20">
+            </div>
+
+            <h2>Planta y Referencias</h2>
+            <div class="control-group">
+                <label>Referencia Final (ry) <span class="value-display" id="val-ry">60</span></label>
+                <input type="range" id="ry_fin" min="50" max="100" step="1" value="60">
+            </div>
+        </aside>
+
+        <main class="charts-area">
+            <div class="chart-container">
+                <canvas id="chartOutput"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="chartValves"></canvas>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
