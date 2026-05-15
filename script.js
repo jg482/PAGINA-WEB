@@ -122,7 +122,7 @@ function initCharts() {
             responsive: true, 
             maintainAspectRatio: false, 
             animation: false,
-            scales: { y: { min: 45, max: 75 } }
+            scales: { y: { } }
         }
     });
 
@@ -140,7 +140,7 @@ function initCharts() {
             responsive: true, 
             maintainAspectRatio: false, 
             animation: false,
-            scales: { y: { min: 0, max: 100 } }
+            scales: { y: { } }
         }
     });
 }
